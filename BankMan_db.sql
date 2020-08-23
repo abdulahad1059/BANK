@@ -74,11 +74,11 @@ INSERT INTO `Transaction` (`Trans_id`, `Date`, `Acc_no1`, `Acc_no2`, `Remark`, `
 (39, '2020-11-03', 1233108100, 1238069768, 'TRANSFER', 1000, 'ATM_banker');
 
 ALTER TABLE `CUSTOMERS`
-  ADD CONSTRAINT `CUSTOMERS_ibfk_1` FOREIGN KEY (`Emp_id`) REFERENCES `Employee` (`Emp_id`);
+  ADD CONSTRAINT  FOREIGN KEY (`Emp_id`) REFERENCES `Employee` (`Emp_id`);
 
 ALTER TABLE `Transaction`
-  ADD CONSTRAINT `Transaction_ibfk_1` FOREIGN KEY (`Acc_no1`) REFERENCES `CUSTOMERS` (`Acc_no`),
-  ADD CONSTRAINT `Transaction_ibfk_2` FOREIGN KEY (`Emp_id`) REFERENCES `Employee` (`Emp_id`),
-  ADD CONSTRAINT `Transaction_ibfk_3` FOREIGN KEY (`Acc_no2`) REFERENCES `CUSTOMERS` (`Acc_no`);
+  ADD CONSTRAINT  FOREIGN KEY (`Acc_no1`) REFERENCES `CUSTOMERS` (`Acc_no`),
+  ADD CONSTRAINT  FOREIGN KEY (`Emp_id`) REFERENCES `Employee` (`Emp_id`),
+  ADD CONSTRAINT  FOREIGN KEY (`Acc_no2`) REFERENCES `CUSTOMERS` (`Acc_no`);
 
 
