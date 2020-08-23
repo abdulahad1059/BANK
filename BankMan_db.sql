@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `CUSTOMERS` (
   `Emp_id` varchar(30) NOT NULL,
   PRIMARY KEY (`Acc_no`),
   UNIQUE KEY `ATM_NO` (`ATM_NO`),
-  KEY `Emp_id` (`Emp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -51,9 +50,6 @@ CREATE TABLE IF NOT EXISTS `Transaction` (
   `Amount` int(11) NOT NULL,
   `Emp_id` varchar(30) NOT NULL,
   PRIMARY KEY (`Trans_id`),
-  KEY `Acc_no1` (`Acc_no1`),
-  KEY `Emp_id` (`Emp_id`),
-  KEY `Acc_no2` (`Acc_no2`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
 
