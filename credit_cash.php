@@ -92,7 +92,7 @@ $query4_row=mysql_fetch_assoc($query4_data);
 		$query1="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','CREDIT_CASH','$amount','$Emp_id')";
 		
 		$query2="UPDATE CUSTOMERS SET Amount=Amount+'$amount' WHERE Acc_no='$acc_no'";
-		$query5="UPDATE Transaction_count SET Trans_count=Trans_count+1";
+		$query5="UPDATE Transaction SET Trans_id=Trans_id+1";
 		
 		if($query1_data=mysql_query($query1) && $query2_data=mysql_query($query2) ){
 			if($query5_data=mysql_query($query5)){
