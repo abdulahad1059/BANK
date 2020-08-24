@@ -89,15 +89,15 @@ if(isset($_POST['Amount']) && !empty($_POST['Amount']) && isset($_POST['Acc_no1'
 			$query3_row=mysql_fetch_assoc($query3_data);
 			$a=$query3_row['Amount'];
 			if($amount<=$a){
-			$query7="SELECT Trans_count FROM Transaction_count";
+			$query7="SELECT Trans_id FROM Transaction";
 $query7_data=mysql_query($query7);
 $query7_row=mysql_fetch_assoc($query7_data);
-		$Trans_id=$query7_row['Trans_count']+1;
-				$query1="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','CREDIT_CHEQUE','$amount','$Emp_id')";
-				$query6="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no_debit','DEBIT_CHEQUE','$amount','$Emp_id')";
+		$Trans_id=$query7_row['Trans_id']+1;
+				$query1="INSERT INTO Transaction(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','CREDIT_CHEQUE','$amount','$Emp_id')";
+				$query6="INSERT INTO Transaction(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no_debit','DEBIT_CHEQUE','$amount','$Emp_id')";
 				$query4="UPDATE CUSTOMERS SET Amount=Amount-'$amount' WHERE Acc_no='$acc_no_debit'";
 				$query2="UPDATE CUSTOMERS SET Amount=Amount+'$amount' WHERE Acc_no='$acc_no'";
-				$query5="UPDATE Transaction_count SET Trans_count=Trans_count+1";
+				$query5="UPDATE Transaction SET Trans_id=Trans_id+1";
 
 				if($query1_data=mysql_query($query1) && $query2_data=mysql_query($query2) && $query4_data=mysql_query($query4) && $query6_data=mysql_query($query6)){
 					if($query5_data=mysql_query($query5)){
