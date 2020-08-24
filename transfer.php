@@ -184,8 +184,8 @@ if(isset($_POST['Amount']) && !empty($_POST['Amount']) && isset($_POST['Acc_no2'
 $query7_data=mysql_query($query7);
 $query7_row=mysql_fetch_assoc($query7_data);
 		$Trans_id=$query7_row['Trans_id']+1;
-				$query1="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','TRANSFER','$amount','$Emp_id')";
-				$query6="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no_credit','TRANSFER','$amount','$Emp_id')";
+				$query1="INSERT INTO Transaction(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','TRANSFER','$amount','$Emp_id')";
+				$query6="INSERT INTO Transaction(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no_credit','TRANSFER','$amount','$Emp_id')";
 
 				$query4="UPDATE CUSTOMERS SET Amount=Amount-'$amount' WHERE Acc_no='$acc_no'";
 				$query2="UPDATE CUSTOMERS SET Amount=Amount+'$amount' WHERE Acc_no='$acc_no_credit'";
@@ -193,7 +193,7 @@ $query7_row=mysql_fetch_assoc($query7_data);
 
 
 				if($query1_data=mysql_query($query1) && $query2_data=mysql_query($query2) && $query4_data=mysql_query($query4) && $query6_data=mysql_query($query6) ){
-					if($query5_data=mysql_query($query5)){
+					if($query7_data=mysql_query($query7)){
 					echo '<br>'.'<span style="color:#0F0691;"><h2>Money Transfer Successful</h2>';//.$query1_data;
 					echo '<h4>Account Number :</h4>'.$acc_no.'<h4>Amount transfered:</h4>'.$amount.'<h4>Amount transfered to:</h4>'.$acc_no_credit;
 					}
