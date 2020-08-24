@@ -181,7 +181,7 @@ else{
     if($atm==null || $atm!="" && $amount>10000){
       die('<h4>you cannot withdraw amount more than 10000<br></h4><h2>transaction declined</h2> ');
     }
-$query4="SELECT Trans_id FROM transaction";
+$query4="SELECT Trans_id FROM Transaction";
 $query4_data=mysql_query($query4);
 if($query4_data)
 {
@@ -192,9 +192,9 @@ else
    die('Database error: ' . mysql_error());
 }
 // $Trans_id=$query4_row['Trans_id']+1;
-$query1="INSERT INTO transaction(Trans_id,Date,Acc_no1,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','$remark','$amount','$Emp_id')";
+$query1="INSERT INTO Transaction(Trans_id,Date,Acc_no1,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','$remark','$amount','$Emp_id')";
 $query2="UPDATE CUSTOMERS SET Amount=Amount-'$amount' WHERE Acc_no='$acc_no'";
-$query5="UPDATE transaction SET Trans_id=Trans_id+1";
+$query5="UPDATE Transaction SET Trans_id=Trans_id+1";
 
       if($query1_data=mysql_query($query1) && $query2_data=mysql_query($query2) ){
         if($query5_data=mysql_query($query5)){
@@ -210,8 +210,8 @@ $query5="UPDATE transaction SET Trans_id=Trans_id+1";
     
     }
     else{
-    if($atm!=null || $atm!="" && $amount>10000){
-    die('<h4>you cannot withdraw amount more than 10000<br></h4><h2>transaction declined</h2> ');
+    if($atm!=null || $atm!="" && $amount>100000){
+    die('<h4>you cannot withdraw amount more than 100000<br></h4><h2>transaction declined</h2> ');
     }
     header('Location:manager_permission.php');
     }
