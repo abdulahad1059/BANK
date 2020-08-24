@@ -84,10 +84,10 @@ if(isset($_POST['Amount']) && !empty($_POST['Amount'])){
 	
 		$acc_no=$_SESSION['acc_no'];
 		$Emp_id=$_SESSION['emp_id'];
-		$query4="SELECT Trans_count FROM Transaction_count";
+		$query4="SELECT Trans_id FROM Transaction";
 $query4_data=mysql_query($query4);
 $query4_row=mysql_fetch_assoc($query4_data);
-		$Trans_id=$query4_row['Trans_count']+1;
+		$Trans_id=$query4_row['Trans_id']+1;
 
 		$query1="INSERT INTO Transactions(Trans_id,Date,Acc_no,Remark,Amount,Emp_id) VALUES('$Trans_id','$date','$acc_no','CREDIT_CASH','$amount','$Emp_id')";
 		
