@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `CUSTOMERS` (
 INSERT INTO `CUSTOMERS` (`Acc_no`, `First_name`, `Last_name`, `DOB`, `Contact_No`, `Address`, `Created_on`, `Amount`, `ATM_NO`, `PIN`, `Emp_id`) VALUES
 (1233108100, 'Hrithik', 'Roshan', '2000-01-02', 9112542365, 'Mumbai', '2020-11-03', 9953800, 4591536044433712, 8272, 'alex_banker'),
 (1237912995, 'Deepika', 'Padukone', '2003-03-03', 9421352012, 'Bengaluru', '2020-11-03', 4003900, 4591720349994488, 5125, 'alex_banker'),
-(1238069768, 'Kareena', 'Kapoor', '2001-02-03', 7525992132, 'Pataudi', '2020-11-03', 45001000, 4591706200773827, 8457, 'alex_banker'),
+(1238069768, 'Kareena', 'Kapoor', '2001-02-03', 7525992132, 'Mumbai', '2020-11-03', 45001000, 4591706200773827, 8457, 'alex_banker'),
 (1238153062, 'Ranbeer', 'Kapoor', '2002-02-03', 9421356821, 'Punjab', '2020-11-03', 8001000, 4591996880438644, 1730, 'alex_banker'),
 (1239799042, 'Akshay', 'Kumar', '2002-04-01', 9431568452, 'Ludhiana', '2020-11-03', 2147483647, 4591869573610369, 3843, 'alex_banker');
 
